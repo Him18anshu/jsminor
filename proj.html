@@ -578,8 +578,7 @@
 
         let customInventory = JSON.parse(localStorage.getItem("store_inventory")) || [];
         gallery.innerHTML = ""; 
-
-        // 1. Render baseline default items
+        
         baselineCollection.forEach((item) => {
             if (selectedCategory !== "All" && item.category !== selectedCategory) return;
             if (item.price > maxPriceFilter) return;
@@ -601,7 +600,7 @@
             `;
         });
 
-        // 2. Render user created custom items
+      
         customInventory.forEach((item, customArrIdx) => {
             if (selectedCategory !== "All" && item.category !== selectedCategory) return;
             if (item.price > maxPriceFilter) return;
